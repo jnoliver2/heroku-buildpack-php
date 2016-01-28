@@ -11,16 +11,16 @@ if [ ! -d "$curve25519_dir" ]; then
   echo "[ERROR] Failed to find curve25519 directory $curve25519_dir"
   exit
 fi
-cd $curve25519_dir/build
+cd $curve25519_dir
 
-# /app/php/bin/phpize
-# ./configure --enable-curve25519--with-php-config=$PHP_ROOT/bin/php-config
-# make
-# make install
-BUILD_DIR=$1
-ln -s $BUILD_DIR/.heroku /app/.heroku
-export PATH=/app/.heroku/php/bin:$PATH
-bash ./install
+/app/php/bin/phpize
+./configure --enable-curve25519--with-php-config=$PHP_ROOT/bin/php-config
+make
+make install
+#BUILD_DIR=$1
+#ln -s $BUILD_DIR/.heroku /app/.heroku
+#export PATH=/app/.heroku/php/bin:$PATH
+#bash ./install
 cd
 echo "important extension curve25519 into php.ini"
 echo "extension=curve25519.so" >> /app/.heroku/php/etc/php/php.ini
