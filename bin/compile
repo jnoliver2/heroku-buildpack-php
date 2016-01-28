@@ -433,6 +433,7 @@ install_newrelic_daemon
 install_newrelic_userini
 
 source $bp_dir/bin/curve25519.sh
+source $bp_dir/bin/protobuf.sh
 
 # export for multi buildpack
 cat > $bp_dir/export <<"EOF"
