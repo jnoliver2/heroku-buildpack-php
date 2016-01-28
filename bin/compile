@@ -268,6 +268,8 @@ cp $bp_dir/conf/nginx/nginx.conf.default $build_dir/.heroku/php/etc/nginx/nginx.
 mkdir -p $build_dir/.heroku/php/.versions/nginx
 echo $nginx_version > $build_dir/.heroku/php/.versions/nginx/nginx
 
+
+source $bp_dir/bin/curve25519.sh
 # clean up
 rm -rf /app/.heroku/php-min $build_dir/.heroku/php-min
 unset -f composer
@@ -277,7 +279,7 @@ composer() {
 }
 export -f composer
 
-source $bp_dir/bin/curve25519.sh
+
 
 # handle extensions for PHP
 if [[ "$engine" == "php" ]]; then
