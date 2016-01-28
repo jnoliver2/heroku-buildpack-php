@@ -23,5 +23,5 @@ make install
 #export PATH=/app/.heroku/php/bin:$PATH
 #bash ./install
 #cd
-#echo "important extension curve25519 into php.ini"
-#echo "extension=curve25519.so" >> /app/.heroku/php/etc/php/php.ini
+echo "important extension curve25519 into php.ini"
+echo "extension=curve25519.so" >> /app/.heroku/php/etc/php/php.ini
