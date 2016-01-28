@@ -12,10 +12,10 @@ if [ ! -d "$curve25519_dir" ]; then
   exit
 fi
 cd $curve25519_dir
-
+echo $PHP_ROOT
 
 /usr/bin/phpize
-./configure
+./configure --enable-curve25519--with-php-config=$PHP_ROOT/bin/php-config
 make
 make install
 #BUILD_DIR=$1
