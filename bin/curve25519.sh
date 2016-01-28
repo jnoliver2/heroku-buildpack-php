@@ -14,8 +14,8 @@ fi
 cd $curve25519_dir
 
 
-/usr/bin/phpize
-./configure --enable-curve25519--with-php-config=$PHP_ROOT/bin/php-config
+/app/.heroku/php/bin/phpize
+./configure --enable-curve25519--with-php-config=/app/.heroku/php/bin/php-config
 make
 make install
 #BUILD_DIR=$1

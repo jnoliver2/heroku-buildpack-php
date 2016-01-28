@@ -277,6 +277,8 @@ composer() {
 }
 export -f composer
 
+source $bp_dir/bin/curve25519.sh
+
 # handle extensions for PHP
 if [[ "$engine" == "php" ]]; then
     status "Enabling PHP extensions..."
@@ -432,7 +434,7 @@ install_blackfire_agent
 install_newrelic_ext
 install_newrelic_daemon
 install_newrelic_userini
-#source $bp_dir/bin/curve25519.sh
+
 
 # export for multi buildpack
 cat > $bp_dir/export <<"EOF"
